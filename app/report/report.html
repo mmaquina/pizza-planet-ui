@@ -3,7 +3,10 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
     <link
@@ -14,7 +17,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <title>L'ultima Cena Pizzeria! - Order details</title>
+    <title>L'ultima Cena Pizzeria! - Report</title>
   </head>
 
   <body>
@@ -23,7 +26,13 @@
     <header class="header-section container-fluid">
       <nav class="navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="/">
-          <img src="/images/image4.png" width="50" height="50" class="d-inline-block align-top" alt="" />
+          <img
+            src="/images/image4.png"
+            width="50"
+            height="50"
+            class="d-inline-block align-top"
+            alt=""
+          />
           L'ultima Cena
         </a>
         <ul class="navbar-nav mr-auto"></ul>
@@ -37,7 +46,9 @@
             <a class="nav-link" href="/app/order/orders.html">Orders</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/app/ingredient/ingredients.html">Ingredients</a>
+            <a class="nav-link" href="/app/ingredient/ingredients.html"
+              >Ingredients</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/app/size/sizes.html">Sizes</a>
@@ -52,77 +63,19 @@
       </nav>
     </header>
 
-    <!-- Order Detail -->
-
+    <!-- Reports -->
     <div class="container">
       <div class="jumbotron">
-        <div id="order"></div>
+        <h2 class="text-center">Report</h2>
+        <div class="report">
+          <div id="most-requested-ingredient"></div>
+          <div id="month"></div>
+        </div>
+        <div id="top3"></div>
       </div>
     </div>
 
-    <template id="order-template">
-      <h2 id="title" class="text-center">Order Detail - {{date}}</h2>
-      <br />
-
-      <!-- CLIENT DATA -->
-
-      <div id="contact-info">
-        <div class="row">
-          <label class="col-sm-3">Name: </label>
-          <h5>{{client_name}}</h5>
-        </div>
-
-        <div class="row">
-          <label class="col-sm-3">DNI: </label>
-          <h5>{{client_dni}}</h5>
-        </div>
-
-        <div class="row">
-          <label class="col-sm-3">Address: </label>
-          <h5>{{client_address}}</h5>
-        </div>
-
-        <div class="row">
-          <label class="col-sm-3">Phone #: </label>
-          <h5>{{client_phone}}</h5>
-        </div>
-      </div>
-
-      <hr />
-
-      <!-- SIZE, INGREDIENTS AND BEVERAGES-->
-
-      <table class="table bg-white table-bordered">
-        <thead class="thead-dark">
-          <tr>
-            <th class="w-33">Size</th>
-            <th class="w-33">Ingredients</th>
-            <th class="w-33">Beverages</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <p id="size">{{size.name}} - ${{size.price}}</p>
-            </td>
-            <td id="ingredients">
-              {{#detail}}
-              <p>{{ingredient.name}} - ${{ingredient_price}}</p>
-              {{/detail}}
-            </td>
-            <td id="beverages">
-              {{#beverage_detail}}
-              <p>{{beverage.name}} - ${{beverage_price}}</p>
-              {{/beverage_detail}}
-            </td>
-          </tr>
-          <tr class="table-active">
-            <th id="total" class="text-right" colspan="3">Total: ${{total_price}}</th>
-          </tr>
-        </tbody>
-      </table>
-    </template>
-
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -145,6 +98,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/order/order-detail.js"></script>
+    <script src="/js/report/report.js"></script>
   </body>
 </html>
